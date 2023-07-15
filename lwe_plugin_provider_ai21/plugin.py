@@ -3,6 +3,9 @@ from langchain.llms import AI21
 from lwe.core.provider import Provider, PresetValue
 
 class ProviderAi21(Provider):
+    """
+    Access to AI21 models
+    """
 
     @property
     def model_property_name(self):
