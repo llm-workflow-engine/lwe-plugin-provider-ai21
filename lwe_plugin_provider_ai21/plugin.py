@@ -1,4 +1,4 @@
-from langchain.llms import AI21
+from langchain_community.llms import AI21
 
 from lwe.core.provider import Provider, PresetValue
 
