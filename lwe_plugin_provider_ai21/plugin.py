@@ -1,6 +1,16 @@
-from langchain_community.llms import AI21
+from langchain_ai21 import AI21LLM
+from langchain_core.pydantic_v1 import Field
 
 from lwe.core.provider import Provider, PresetValue
+
+AI21_DEFAULT_MODEL = 'j2-jumbo-instruct'
+
+
+class CustomAI21LLM(AI21LLM):
+
+    model: str = Field(default=AI21_DEFAULT_MODEL)
+    """Model name to use."""
+
 
 class ProviderAi21(Provider):
     """
@@ -38,10 +48,10 @@ class ProviderAi21(Provider):
 
     @property
     def default_model(self):
-        return 'j2-jumbo-instruct'
+        return AI21_DEFAULT_MODEL
 
     def llm_factory(self):
-        return AI21
+        return CustomAI21LLM
 
     def customization_config(self):
         return {
