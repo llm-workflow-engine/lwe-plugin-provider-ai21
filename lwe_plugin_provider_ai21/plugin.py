@@ -23,32 +23,34 @@ class ProviderAi21(Provider):
 
     @property
     def capabilities(self):
-        return {
-            'models': {
-                'j2-large': {
-                    'max_tokens': 8192,
-                },
-                'j2-grande': {
-                    'max_tokens': 8192,
-                },
-                'j2-jumbo': {
-                    'max_tokens': 8192,
-                },
-                'j2-large-instruct': {
-                    'max_tokens': 8192,
-                },
-                'j2-grande-instruct': {
-                    'max_tokens': 8192,
-                },
-                'j2-jumbo-instruct': {
-                    'max_tokens': 8192,
-                },
-            }
-        }
+        return {}
 
     @property
     def default_model(self):
         return AI21_DEFAULT_MODEL
+
+    @property
+    def static_models(self):
+        return {
+            'j2-large': {
+                'max_tokens': 8192,
+            },
+            'j2-grande': {
+                'max_tokens': 8192,
+            },
+            'j2-jumbo': {
+                'max_tokens': 8192,
+            },
+            'j2-large-instruct': {
+                'max_tokens': 8192,
+            },
+            'j2-grande-instruct': {
+                'max_tokens': 8192,
+            },
+            'j2-jumbo-instruct': {
+                'max_tokens': 8192,
+            },
+        }
 
     def llm_factory(self):
         return CustomAI21LLM
