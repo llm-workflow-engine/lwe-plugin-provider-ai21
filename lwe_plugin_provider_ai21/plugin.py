@@ -1,5 +1,5 @@
 from langchain_ai21 import AI21LLM
-from langchain_core.pydantic_v1 import Field
+from pydantic import Field
 
 from lwe.core.provider import Provider, PresetValue
 
