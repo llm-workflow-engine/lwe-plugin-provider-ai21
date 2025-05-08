@@ -11,8 +11,13 @@ class CustomChatAI2(ChatAI21):
     model: str = Field(default=AI21_DEFAULT_MODEL)
     """Model name to use."""
 
+    @property
+    def _llm_type(self):
+        """Return type of llm."""
+        return "chat_ai21"
 
-class ProviderAi21(Provider):
+
+class ProviderChatAi21(Provider):
     """
     Access to AI21 models
     """

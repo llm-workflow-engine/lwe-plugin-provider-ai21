@@ -1,8 +1,8 @@
 # LLM Workflow Engine (LWE) AI21 Provider plugin
 
-AI21 Provider plugin for [LLM Workflow Engine](https://github.com/llm-workflow-engine/llm-workflow-engine)
+Chat AI21 Provider plugin for [LLM Workflow Engine](https://github.com/llm-workflow-engine/llm-workflow-engine)
 
-Access to [AI21](https://docs.ai21.com/docs/jurassic-2-models) models.
+Access to [AI21 chat models](https://docs.ai21.com/docs/jamba-foundation-models).
 
 ## Installation
 
@@ -21,7 +21,7 @@ export AI21_API_KEY=<API_KEY>
 Install the latest version of this software directly from github with pip:
 
 ```bash
-pip install git+https://github.com/llm-workflow-engine/lwe-plugin-provider-ai21
+pip install git+https://github.com/llm-workflow-engine/lwe-plugin-provider-chat-ai21
 ```
 
 ### From source (recommended for development)
@@ -29,13 +29,13 @@ pip install git+https://github.com/llm-workflow-engine/lwe-plugin-provider-ai21
 Install the latest version of this software directly from git:
 
 ```bash
-git clone https://github.com/llm-workflow-engine/lwe-plugin-provider-ai21.git
+git clone https://github.com/llm-workflow-engine/lwe-plugin-provider-chat-ai21.git
 ```
 
 Install the development package:
 
 ```bash
-cd lwe-plugin-provider-ai21
+cd lwe-plugin-provider-chat-ai21
 pip install -e .
 ```
 
@@ -46,7 +46,7 @@ Add the following to `config.yaml` in your profile:
 ```yaml
 plugins:
   enabled:
-    - provider_ai21
+    - provider_chat_ai21
     # Any other plugins you want enabled...
 ```
 
@@ -55,6 +55,6 @@ plugins:
 From a running LWE shell:
 
 ```
-/provider ai21
-/model model j2-large
+/provider chat_ai21
+/model model jamba-mini
 ```

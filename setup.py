@@ -10,18 +10,18 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open('requirements.txt') as f:
     install_requirement = f.readlines()
 
-with open(path.join(FILE_DIR, 'lwe_plugin_provider_ai21', 'version.py')) as f:
+with open(path.join(FILE_DIR, 'lwe_plugin_provider_chat_ai21', 'version.py')) as f:
     version = re.match(r'^__version__ = "([\w\.]+)"$', f.read().strip())[1]
 
 setup(
-    name="lwe-plugin-provider-ai21",
+    name="lwe-plugin-provider-chat-ai21",
     version=version,
     author="Chad Phillips",
     author_email="chad@apartmentlines.com",
-    description="LWE plugin: AI21 Provider plugin",
+    description="LWE plugin: Chat AI21 Provider plugin",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/llm-workflow-engine/lwe-plugin-provider-ai21",
+    url="https://github.com/llm-workflow-engine/lwe-plugin-provider-chat-ai21",
     packages=find_packages(),
     install_requires=install_requirement,
     classifiers=[
@@ -29,10 +29,10 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     entry_points={
         "lwe_plugins": [
-            "lwe_plugin_provider_ai21 = lwe_plugin_provider_ai21.plugin:ProviderAi21"
+            "lwe_plugin_provider_chat_ai21 = lwe_plugin_provider_chat_ai21.plugin:ProviderChatAi21"
         ]
     },
 )
