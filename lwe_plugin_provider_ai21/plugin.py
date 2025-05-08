@@ -1,12 +1,12 @@
-from langchain_ai21 import AI21LLM
+from langchain_ai21.chat_models import ChatAI21
 from pydantic import Field
 
 from lwe.core.provider import Provider, PresetValue
 
-AI21_DEFAULT_MODEL = 'j2-jumbo-instruct'
+AI21_DEFAULT_MODEL = 'jamba-large'
 
 
-class CustomAI21LLM(AI21LLM):
+class CustomChatAI2(ChatAI21):
 
     model: str = Field(default=AI21_DEFAULT_MODEL)
     """Model name to use."""
@@ -32,28 +32,16 @@ class ProviderAi21(Provider):
     @property
     def static_models(self):
         return {
-            'j2-large': {
-                'max_tokens': 8192,
+            'jamba-mini': {
+                'max_tokens': 262144,
             },
-            'j2-grande': {
-                'max_tokens': 8192,
-            },
-            'j2-jumbo': {
-                'max_tokens': 8192,
-            },
-            'j2-large-instruct': {
-                'max_tokens': 8192,
-            },
-            'j2-grande-instruct': {
-                'max_tokens': 8192,
-            },
-            'j2-jumbo-instruct': {
-                'max_tokens': 8192,
+            'jamba-large': {
+                'max_tokens': 262144,
             },
         }
 
     def llm_factory(self):
-        return CustomAI21LLM
+        return CustomChatAI2
 
     def customization_config(self):
         return {
