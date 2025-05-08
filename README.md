@@ -1,4 +1,4 @@
-# LLM Workflow Engine (LWE) AI21 Provider plugin
+# LLM Workflow Engine (LWE) Chat AI21 Provider plugin
 
 Chat AI21 Provider plugin for [LLM Workflow Engine](https://github.com/llm-workflow-engine/llm-workflow-engine)
 
